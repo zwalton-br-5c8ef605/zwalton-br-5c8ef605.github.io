@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>电影蜜蜂-高清电影推荐与观影指南_最新电影资源_影迷收藏夹</title>
+  <meta name="description" content="电影蜜蜂是一个专注高清电影推荐与观影指南的内容专题站。汇集最新电影资源、高分片单、类型解析和影迷真实评论，提供从选片到观影的完整参考，适合喜欢电影收藏与深度讨论的用户浏览。">
+  <meta name="keywords" content="电影蜜蜂,高清电影推荐,最新电影资源,电影专题,影迷收藏夹">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f5b82e'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='%231e1e2f'%3E🐝%3C/text%3E%3C/svg%3E">
+  <style>
+    /* ===== 全局变量与重置 ===== */
+    :root{
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --surface-soft: #fdfaf3;
+      --ink: #1e1e2f;
+      --ink-soft: #4a4a5e;
+      --muted: #7c7c8f;
+      --line: #e8e3d9;
+      --brand: #f5b82e;
+      --brand-deep: #d99a0b;
+      --brand-soft: #fef4dc;
+      --accent: #2e6b5e;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+      --shadow-soft: 0 6px 24px rgba(30,30,47,.06), 0 2px 6px rgba(30,30,47,.04);
+      --shadow-hover: 0 14px 34px rgba(30,30,47,.10), 0 4px 10px rgba(30,30,47,.05);
+      --max: 1200px;
+      --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a{ color: inherit; text-decoration: none; }
+    ul{ list-style: none; }
+    img{ max-width: 100%; }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .section{ padding: 56px 0; }
+    .section-head{ display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+    .section-head h2{
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      line-height: 1.3;
+    }
+    .section-head h2 .dot{ color: var(--brand-deep); }
+    .section-head .sub{ color: var(--muted); font-size: 14px; max-width: 560px; }
+    .badge{ display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; background: var(--brand-soft); color: var(--brand-deep); font-size: 12px; font-weight: 700; letter-spacing: .02em; }
+    .card{ background: var(--surface); border-radius: var(--radius-md); box-shadow: var(--shadow-soft); border: 1px solid var(--line); transition: transform .22s ease, box-shadow .22s ease; }
+    .card:hover{ transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .grid{ display: grid; gap: 20px; }
+    .grid-3{ grid-template-columns: repeat(3, 1fr); }
+    .grid-4{ grid-template-columns: repeat(4, 1fr); }
+    .grid-2{ grid-template-columns: repeat(2, 1fr); }
+    .btn{ display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 20px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid transparent; cursor: pointer; transition: .2s; white-space: nowrap; }
+    .btn-primary{ background: var(--brand); color: var(--ink); box-shadow: 0 4px 14px rgba(245,184,46,.3); }
+    .btn-primary:hover{ background: var(--brand-deep); color: #fff; }
+    .btn-ghost{ background: transparent; border-color: var(--line); color: var(--ink-soft); }
+    .btn-ghost:hover{ border-color: var(--brand); color: var(--brand-deep); background: var(--brand-soft); }
+
+    /* ===== 顶部导航 ===== */
+    header{
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(247,245,240,.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar{ display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 66px; }
+    .brand{ display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 20px; letter-spacing: -.02em; }
+    .brand .logo-mark{ width: 36px; height: 36px; border-radius: 12px; background: linear-gradient(135deg, var(--brand) 0%, #f6ce6a 100%); display: grid; place-items: center; font-size: 20px; box-shadow: 0 3px 10px rgba(245,184,46,.35); }
+    .brand small{ font-weight: 500; font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+    .nav-links{ display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+    .nav-links a{ padding: 8px 14px; border-radius: 999px; font-size: 14px; color: var(--ink-soft); transition: .18s; font-weight: 500; }
+    .nav-links a:hover{ background: var(--brand-soft); color: var(--brand-deep); }
+    .nav-actions{ display: flex; align-items: center; gap: 10px; }
+    .mobile-toggle{ display: none; background: none; border: 0; font-size: 22px; cursor: pointer; color: var(--ink); }
+
+    /* ===== Banner ===== */
+    .hero{
+      position: relative; overflow: hidden;
+      background: linear-gradient(145deg, #fffdf7 0%, #fef6e2 45%, #fdf1d4 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero::before{
+      content:""; position:absolute; right:-160px; top:-120px; width:420px; height:420px; border-radius:50%;
+      background: radial-gradient(circle, rgba(245,184,46,.28), transparent 68%);
+    }
+    .hero::after{
+      content:""; position:absolute; left:-100px; bottom:-140px; width:360px; height:360px; border-radius:50%;
+      background: radial-gradient(circle, rgba(46,107,94,.10), transparent 70%);
+    }
+    .hero-inner{ position: relative; z-index: 1; padding: 64px 0 54px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; }
+    .hero-copy .kicker{ display:inline-flex; align-items:center; gap:8px; background: #fff; border:1px solid var(--line); padding:5px 14px; border-radius:999px; font-size:12px; font-weight:700; color: var(--brand-deep); margin-bottom: 18px; box-shadow: var(--shadow-soft); }
+    .hero h1{ font-size: clamp(32px, 4.6vw, 52px); font-weight: 900; line-height: 1.15; letter-spacing: -.03em; margin-bottom: 16px; }
+    .hero h1 em{ font-style: normal; color: var(--brand-deep); position: relative; }
+    .hero h1 em::after{ content:""; position:absolute; left:0; right:0; bottom:4px; height:10px; background: rgba(245,184,46,.35); border-radius: 4px; z-index:-1; }
+    .hero .lead{ font-size: 16px; color: var(--ink-soft); max-width: 560px; margin-bottom: 26px; }
+    .hero-search{ display: flex; gap: 10px; max-width: 560px; margin-bottom: 22px; background: #fff; padding: 8px; border-radius: 999px; border: 1px solid var(--line); box-shadow: var(--shadow-soft); }
+    .hero-search input{ flex: 1; border: 0; background: transparent; padding: 8px 16px; font-size: 14px; outline: none; color: var(--ink); }
+    .hero-search input::placeholder{ color: var(--muted); }
+    .hero-tags{ display: flex; flex-wrap: wrap; gap: 8px; }
+    .hero-tags a{ font-size: 12px; padding: 6px 14px; background: #fff; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft); transition: .2s; font-weight: 500; }
+    .hero-tags a:hover{ border-color: var(--brand); color: var(--brand-deep); background: var(--brand-soft); }
+    .hero-visual{ position: relative; }
+    .poster-stack{ display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .poster{
+      aspect-ratio: 3/4; border-radius: var(--radius-md); position: relative; overflow: hidden;
+      box-shadow: var(--shadow-soft); display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; color: #fff;
+    }
+    .poster::after{ content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,.65), transparent 55%); }
+    .poster span{ position: relative; z-index:1; font-weight: 800; font-size: 15px; line-height:1.3; }
+    .poster small{ position: relative; z-index:1; font-size: 11px; opacity:.8; }
+    .p1{ background: linear-gradient(160deg, #2f4858, #1f2d36); }
+    .p2{ background: linear-gradient(160deg, #7a4a2e, #3f2718); }
+    .p3{ background: linear-gradient(160deg, #3d5a4c, #22362c); }
+    .p4{ background: linear-gradient(160deg, #5c3a4e, #36222e); }
+
+    /* ===== 内容简介 ===== */
+    .intro-wrap{ display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: start; }
+    .intro-text{ background: var(--surface); border-radius: var(--radius-lg); padding: 34px 36px; border: 1px solid var(--line); box-shadow: var(--shadow-soft); }
+    .intro-text h2{ font-size: clamp(22px,2.6vw,28px); margin-bottom: 14px; letter-spacing:-.02em; }
+    .intro-text p{ color: var(--ink-soft); font-size: 15px; margin-bottom: 14px; }
+    .intro-text p:last-child{ margin-bottom: 0; }
+    .intro-aside{ display: grid; gap: 14px; }
+    .stat-mini{ background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 18px 20px; display: flex; align-items: center; gap: 14px; }
+    .stat-mini .num{ font-size: 26px; font-weight: 900; color: var(--brand-deep); letter-spacing:-.02em; }
+    .stat-mini .lbl{ font-size: 13px; color: var(--muted); line-height: 1.4; }
+    .stat-mini .icon{ width: 44px; height: 44px; border-radius: 12px; background: var(--brand-soft); display: grid; place-items: center; font-size: 20px; flex: none; }
+
+    /* ===== 推荐卡片 ===== */
+    .rec-card{ overflow: hidden; display: flex; flex-direction: column; }
+    .rec-cover{ height: 148px; position: relative; display: flex; align-items: flex-end; padding: 14px; }
+    .rec-cover .cat{ position:relative; z-index:1; background: rgba(255,255,255,.92); color: var(--ink); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+    .rec-body{ padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex:1; }
+    .rec-body h3{ font-size: 17px; font-weight: 800; letter-spacing:-.01em; line-height:1.35; }
+    .rec-body .desc{ font-size: 13px; color: var(--ink-soft); line-height: 1.6; flex:1; }
+    .rec-tags{ display: flex; flex-wrap: wrap; gap: 6px; }
+    .rec-tags span{ font-size: 11px; background: var(--surface-soft); border: 1px solid var(--line); color: var(--muted); padding: 2px 9px; border-radius: 999px; }
+    .rec-meta{ display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px dashed var(--line); font-size: 12px; color: var(--muted); }
+    .rec-meta .score{ color: var(--brand-deep); font-weight: 800; font-size: 14px; }
+
+    /* ===== 最新更新 ===== */
+    .update-list{ display: grid; gap: 12px; }
+    .update-item{ display: flex; align-items: center; gap: 16px; padding: 16px 20px; }
+    .update-item .idx{ font-size: 13px; font-weight: 800; color: var(--brand-deep); min-width: 32px; }
+    .update-item .info{ flex:1; min-width: 0; }
+    .update-item .info h4{ font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+    .update-item .info p{ font-size: 13px; color: var(--muted); }
+    .update-item .time{ font-size: 12px; color: var(--muted); white-space: nowrap; background: var(--surface-soft); padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); }
+
+    /* ===== 分类入口 ===== */
+    .cat-grid{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .cat-card{ padding: 22px 20px; display: flex; flex-direction: column; gap: 8px; background: var(--surface); border:1px solid var(--line); border-radius: var(--radius-md); transition: .22s; }
+    .cat-card:hover{ border-color: var(--brand); background: var(--brand-soft); transform: translateY(-3px); }
+    .cat-card .ico{ width: 40px; height: 40px; border-radius: 12px; background: var(--brand-soft); display: grid; place-items: center; font-size: 18px; }
+    .cat-card h4{ font-size: 15px; font-weight: 800; }
+    .cat-card p{ font-size: 12px; color: var(--muted); }
+
+    /* ===== 深度解析 ===== */
+    .deep{ background: var(--surface); border-radius: var(--radius-lg); border:1px solid var(--line); padding: 40px 44px; box-shadow: var(--shadow-soft); }
+    .deep h2{ font-size: clamp(22px,2.6vw,28px); margin-bottom: 18px; letter-spacing:-.02em; }
+    .deep p{ color: var(--ink-soft); font-size: 15px; margin-bottom: 16px; }
+    .deep h3{ font-size: 18px; margin: 26px 0 10px; color: var(--ink); }
+    .deep ul{ margin: 0 0 16px 18px; color: var(--ink-soft); font-size: 15px; }
+    .deep ul li{ margin-bottom: 8px; list-style: disc; }
+    .deep .pullquote{ border-left: 4px solid var(--brand); background: var(--surface-soft); padding: 18px 22px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 15px; color: var(--ink-soft); margin: 20px 0; }
+
+    /* ===== FAQ ===== */
+    .faq-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .faq-item{ background: var(--surface); border:1px solid var(--line); border-radius: var(--radius-md); padding: 22px 24px; box-shadow: var(--shadow-soft); }
+    .faq-item h4{ font-size: 15px; font-weight: 800; margin-bottom: 8px; display: flex; gap: 8px; align-items: flex-start; }
+    .faq-item h4 .qmark{ color: var(--brand-deep); font-weight: 900; }
+    .faq-item p{ font-size: 13.5px; color: var(--ink-soft); }
+
+    /* ===== 评论 ===== */
+    .comment-list{ display: grid; gap: 14px; }
+    .comment-item{ display: flex; gap: 14px; background: var(--surface); border:1px solid var(--line); border-radius: var(--radius-md); padding: 18px 20px; box-shadow: var(--shadow-soft); }
+    .avatar{ width: 40px; height: 40px; border-radius: 50%; flex:none; display:grid; place-items:center; font-weight:800; font-size:15px; color:#fff; }
+    .comment-body{ flex:1; min-width:0; }
+    .comment-head{ display:flex; align-items:center; gap:10px; margin-bottom:4px; flex-wrap:wrap; }
+    .comment-head .name{ font-size:14px; font-weight:700; }
+    .comment-head .date{ font-size:12px; color: var(--muted); }
+    .comment-body p{ font-size:13.5px; color: var(--ink-soft); }
+    .comment-actions{ display:flex; gap:14px; margin-top:8px; font-size:12px; color: var(--muted); }
+    .comment-actions span{ cursor: default; }
+
+    /* ===== 资讯 ===== */
+    .news-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .news-card{ padding: 22px 22px 20px; display: flex; flex-direction: column; gap: 10px; }
+    .news-card .date{ font-size: 12px; color: var(--muted); font-weight: 500; }
+    .news-card h4{ font-size: 16px; font-weight: 800; line-height: 1.4; letter-spacing:-.01em; }
+    .news-card p{ font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+    .news-card .read{ font-size: 12px; color: var(--brand-deep); font-weight: 700; margin-top:auto; padding-top: 6px; }
+
+    /* ===== 页脚 ===== */
+    footer{ background: #1e1e2f; color: #c9c9d6; padding: 54px 0 30px; margin-top: 20px; }
+    .foot-grid{ display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 36px; }
+    .foot-brand{ display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 20px; color: #fff; margin-bottom: 14px; }
+    .foot-brand .logo-mark{ width: 34px; height: 34px; border-radius: 10px; background: var(--brand); display: grid; place-items: center; font-size: 18px; }
+    .foot-grid p{ font-size: 13px; line-height: 1.8; color: #9a9aab; }
+    .foot-col h5{ color: #fff; font-size: 14px; margin-bottom: 14px; font-weight: 700; }
+    .foot-col a{ display: block; font-size: 13px; color: #9a9aab; padding: 4px 0; transition: .18s; }
+    .foot-col a:hover{ color: var(--brand); }
+    .foot-bottom{ border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; color: #7c7c8f; }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 980px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      .hero-visual{ display: none; }
+      .intro-wrap{ grid-template-columns: 1fr; }
+      .grid-4{ grid-template-columns: repeat(2,1fr); }
+      .grid-3{ grid-template-columns: repeat(2,1fr); }
+      .cat-grid{ grid-template-columns: repeat(2,1fr); }
+      .news-grid{ grid-template-columns: repeat(2,1fr); }
+      .foot-grid{ grid-template-columns: 1fr 1fr; }
+      .deep{ padding: 28px 26px; }
+    }
+    @media (max-width: 640px){
+      .nav-links{ display: none; }
+      .mobile-toggle{ display: block; }
+      .topbar{ height: 60px; }
+      .hero-inner{ padding: 40px 0 34px; }
+      .grid-4, .grid-3, .grid-2, .faq-grid, .news-grid, .cat-grid{ grid-template-columns: 1fr; }
+      .foot-grid{ grid-template-columns: 1fr; gap: 24px; }
+      .section{ padding: 40px 0; }
+      .intro-text{ padding: 26px 22px; }
+      .update-item{ flex-wrap: wrap; gap: 8px 12px; }
+      .update-item .time{ margin-left: 44px; }
+      .comment-item{ padding: 14px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== 顶部导航 ========== -->
+<header>
+  <div class="wrap topbar">
+    <a href="/#top" class="brand">
+      <span class="logo-mark">🐝</span>
+      <span>电影蜜蜂<br><small>MOVIE BEE</small></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/#hot-picks">热门推荐</a>
+      <a href="/#latest-update">最新更新</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#categories">分类片单</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">影迷评论</a>
+      <a href="/#news">电影资讯</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="/#latest-update" class="btn btn-primary">今日更新</a>
+      <button class="mobile-toggle" aria-label="菜单">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ========== 首屏 Banner ========== -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="kicker">🍿 编辑精选 · 2026 冬季片单</span>
+      <h1>电影蜜蜂<br><em>高清电影推荐</em>与观影指南</h1>
+      <p class="lead">从院线新片到冷门佳作，电影蜜蜂为你整理值得看的电影资源、类型片单和真实口碑。不堆砌片名，只挑真正对味的电影。</p>
+      <div class="hero-search" role="search">
+        <input type="text" placeholder="搜索电影、导演、类型或片单…" aria-label="搜索电影">
+        <button class="btn btn-primary" type="button">搜索</button>
+      </div>
+      <div class="hero-tags">
+        <a href="/#categories">高分剧情</a>
+        <a href="/#categories">悬疑犯罪</a>
+        <a href="/#categories">科幻巨制</a>
+        <a href="/#categories">文艺片单</a>
+        <a href="/#categories">动画电影</a>
+        <a href="/#categories">经典修复</a>
+        <a href="/#categories">冷门佳片</a>
+        <a href="/#latest-update">本周上新</a>
+        <a href="/#hot-picks">影迷评分榜</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="poster-stack">
+        <div class="poster p1"><span>暗夜迷踪</span><small>悬疑 · 犯罪 · 2026</small></div>
+        <div class="poster p2"><span>星尘旅人</span><small>科幻 · 冒险 · 2026</small></div>
+        <div class="poster p3"><span>山中来信</span><small>剧情 · 文艺 · 2025</small></div>
+        <div class="poster p4"><span>逆光少女</span><small>青春 · 成长 · 2026</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 内容简介 ========== -->
+<section class="section" id="intro">
+  <div class="wrap">
+    <div class="intro-wrap">
+      <article class="intro-text">
+        <span class="badge">关于电影蜜蜂</span>
+        <h2>在电影蜜蜂，找到下一部想看的电影</h2>
+        <p>电影蜜蜂是一个为影迷打造的高清电影推荐与观影参考专题。它不追求片库数量，而是把“选片难”这件事拆开处理：按类型、按口碑、按情绪、按观影场景，帮你快速缩小选择范围。无论你今晚想看一部烧脑悬疑，还是周末需要治愈系文艺片，这里都有对应的片单和解析。</p>
+        <p>页面内容覆盖院线新片动态、流媒体上线提醒、经典电影重映信息，以及影迷真实短评。电影蜜蜂特别关注“值得收藏”的片子——那些看完之后会想再看一遍、或者想去讨论区聊两句的作品。每部推荐都配有简短看点、类型标签和评分参考，拒绝空洞的“强烈推荐”。</p>
+        <p>适合人群包括：想提升观影效率的上班族、喜欢按类型补片的影迷、需要片单灵感的内容创作者，以及正在寻找周末观影搭子的普通观众。你可以把电影蜜蜂当作一个常逛常新的电影专题首页，每次打开都有新的发现。</p>
+      </article>
+      <aside class="intro-aside">
+        <div class="stat-mini">
+          <div class="icon">🎬</div>
+          <div><div class="num">3200+</div><div class="lbl">收录电影条目<br>持续更新中</div></div>
+        </div>
+        <div class="stat-mini">
+          <div class="icon">⭐</div>
+          <div><div class="num">4.7</div><div class="lbl">影迷综合评分<br>来自真实短评</div></div>
+        </div>
+        <div class="stat-mini">
+          <div class="icon">📅</div>
+          <div><div class="num">11/07</div><div class="lbl">今日更新<br>新增 9 部推荐</div></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 热门内容推荐 ========== -->
+<section class="section" id="hot-picks" style="background: var(--surface-soft);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>热门推荐 <span class="dot">·</span> 本周影迷都在看</h2>
+      <p class="sub">按口碑与讨论热度综合排序，涵盖不同类型，总有一部适合今晚。</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card rec-card">
+        <div class="rec-cover" style="background: linear-gradient(150deg,#2f4858,#1b2a33);"><span class="cat">悬疑 · 犯罪</span></div>
+        <div class="rec-body">
+          <h3>暗夜迷踪</h3>
+          <p class="desc">一桩旧案牵出整座城市的秘密，节奏紧凑，反转不靠硬拗。适合喜欢本格推理和冷峻影像的观众。</p>
+          <div class="rec-tags"><span>高能反转</span><span>都市夜景</span><span>双线叙事</span></div>
+          <div class="rec-meta"><span class="score">8.9</span><span>更新至 第12集</span></div>
+        </div>
+      </article>
+      <article class="card rec-card">
+        <div class="rec-cover" style="background: linear-gradient(150deg,#3d5a4c,#22362c);"><span class="cat">剧情 · 文艺</span></div>
+        <div class="rec-body">
+          <h3>山中来信</h3>
+          <p class="desc">一封迟到二十年的信，让两代人重新面对彼此。画面干净，情绪克制，适合安静地看完。</p>
+          <div class="rec-tags"><span>治愈系</span><span>乡村取景</span><span>亲情题材</span></div>
+          <div class="rec-meta"><span class="score">8.6</span><span>已上线</span></div>
+        </div>
+      </article>
+      <article class="card rec-card">
+        <div class="rec-cover" style="background: linear-gradient(150deg,#7a4a2e,#3f2718);"><span class="cat">科幻 · 冒险</span></div>
+        <div class="rec-body">
+          <h3>星尘旅人</h3>
+          <p class="desc">近未来太空探索题材，视效扎实，情感线不悬浮。对硬科幻观众友好，也适合入门。</p>
+          <div class="rec-tags"><span>太空歌剧</span><span>视效大片</span><span>孤独感</span></div>
+          <div class="rec-meta"><span class="score">8.4</span><span>院线热映</span></div>
+        </div>
+      </article>
+      <article class="card rec-card">
+        <div class="rec-cover" style="background: linear-gradient(150deg,#5c3a4e,#36222e);"><span class="cat">青春 · 成长</span></div>
+        <div class="rec-body">
+          <h3>逆光少女</h3>
+          <p class="desc">小镇少女的乐队梦，台词自然，不刻意煽情。音乐段落是全片亮点，适合放松观看。</p>
+          <div class="rec-tags"><span>校园</span><span>音乐元素</span><span>新人演员</span></div>
+          <div class="rec-meta"><span class="score">8.1</span><span>新上线</span></div>
+        </div>
+      </article>
+      <article class="card rec-card">
+        <div class="rec-cover" style="background: linear-gradient(150deg,#1f3d4a,#0f2129);"><span class="cat">纪录片 · 自然</span></div>
+        <div class="rec-body">
+          <h3>深海来信</h3>
+          <p class="desc">跟随海洋科考队潜入深渊，镜头语言极美。适合大屏观看，也适合当作背景知识补充。</p>
+          <div class="rec-tags"><span>海洋</span><span>实拍</span><span>科普向</span></div>
+          <div class="rec-meta"><span class="score">9.0</span><span>已上线</span></div>
+        </div>
+      </article>
+      <article class="card rec-card">
+        <div class="rec-cover" style="background: linear-gradient(150deg,#4a3b2a,#2b2116);"><span class="cat">经典 · 修复</span></div>
+        <div class="rec-body">
+          <h3>旧城故事</h3>
+          <p class="desc">4K修复重映，胶片质感保留得很好。老电影入门友好，适合补片单和资料收藏。</p>
+          <div class="rec-tags"><span>经典重映</span><span>4K修复</span><span>年代感</span></div>
+          <div class="rec-meta"><span class="score">9.2</span><span>限定重映</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 最新更新 ========== -->
+<section class="section" id="latest-update">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>最新更新 <span class="dot">·</span> 今日上架与动态</h2>
+      <p class="sub">2026 年 11 月 7 日更新，关注流媒体上线、院线定档与修复重映。</p>
+    </div>
+    <div class="update-list">
+      <div class="card update-item"><span class="idx">01</span><div class="info"><h4>《暗夜迷踪》第 12 集上线</h4><p>本季接近尾声，主角线索交汇，讨论区热度上升。</p></div><span class="time">今天 10:20</span></div>
+      <div class="card update-item"><span class="idx">02</span><div class="info"><h4>《星尘旅人》新增 IMAX 排片</h4><p>周末场次增加，视效段落建议选择大厅观看。</p></div><span class="time">今天 09:45</span></div>
+      <div class="card update-item"><span class="idx">03</span><div class="info"><h4>《山中来信》流媒体上线</h4><p>文艺片单新增一部，适合喜欢慢节奏叙事的观众。</p></div><span class="time">今天 08:30</span></div>
+      <div class="card update-item"><span class="idx">04</span><div class="info"><h4>《逆光少女》发布原声带</h4><p>片中三首插曲正式上架，音乐粉可以单独收藏。</p></div><span class="time">昨天 21:10</span></div>
+      <div class="card update-item"><span class="idx">05</span><div class="info"><h4>《旧城故事》修复版加开场次</h4><p>经典重映反应热烈，部分影院延长一周。</p></div><span class="time">昨天 18:40</span></div>
+      <div class="card update-item"><span class="idx">06</span><div class="info"><h4>深海纪录片《深海来信》上线</h4><p>自然类纪录片关注度上升，适合家庭观看。</p></div><span class="time">昨天 16:05</span></div>
+      <div class="card update-item"><span class="idx">07</span><div class="info"><h4>悬疑片单新增 5 部推荐</h4><p>电影蜜蜂编辑整理“冷门高口碑悬疑片”专题。</p></div><span class="time">昨天 11:30</span></div>
+      <div class="card update-item"><span class="idx">08</span><div class="info"><h4>《逆光少女》导演访谈上线</h4><p>聊到选角与音乐制作，适合想了解幕后的人。</p></div><span class="time">11月5日</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 分类入口 ========== -->
+<section class="section" id="categories" style="background: var(--surface-soft);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>分类片单 <span class="dot">·</span> 按类型找片更快</h2>
+      <p class="sub">电影蜜蜂把片单拆成八种常用入口，减少选择成本。</p>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-card" href="/#hot-picks"><span class="ico">🔍</span><h4>高分悬疑</h4><p>反转、推理、犯罪心理</p></a>
+      <a class="cat-card" href="/#hot-picks"><span class="ico">💫</span><h4>科幻视效</h4><p>太空、未来、技术奇观</p></a>
+      <a class="cat-card" href="/#hot-picks"><span class="ico">🌿</span><h4>治愈文艺</h4><p>慢节奏、生活流、情绪片</p></a>
+      <a class="cat-card" href="/#hot-picks"><span class="ico">🎵</span><h4>音乐与青春</h4><p>校园、乐队、成长故事</p></a>
+      <a class="cat-card" href="/#hot-picks"><span class="ico">🌊</span><h4>纪录片</h4><p>自然、人文、真实影像</p></a>
+      <a class="cat-card" href="/#hot-picks"><span class="ico">🎞️</span><h4>经典修复</h4><p>老片重映、4K 修复</p></a>
+      <a class="cat-card" href="/#hot-picks"><span class="ico">🗂️</span><h4>冷门佳片</h4><p>低讨论度、高完成度</p></a>
+      <a class="cat-card" href="/#latest-update"><span class="ico">🆕</span><h4>本周上新</h4><p>院线与流媒体同步</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 深度解析 ========== -->
+<section class="section" id="deep-dive">
+  <div class="wrap">
+    <div class="deep">
+      <span class="badge">编辑深度解析</span>
+      <h2>电影蜜蜂为什么值得反复浏览</h2>
+      <p>电影蜜蜂的核心价值不在于“片多”，而在于“片单有用”。很多影迷打开一个电影网站，面对成百上千的条目反而不知道从哪看起。电影蜜蜂的做法是先做减法：用类型、口碑、观看场景三条线交叉筛选，把推荐范围缩到十部以内，再给出每部片的短评和适合人群。这种结构对普通观众更友好，也让搜索“电影蜜蜂”的用户能快速获得可执行的观影建议。</p>
+      <h3>类型片单的整理逻辑</h3>
+      <p>悬疑、科幻、文艺、青春、纪录片是本站目前重点维护的五个方向。每个方向都尽量保持“新片 + 经典 + 冷门”的组合，避免片单变成热门榜单的复制品。例如悬疑片单里既有正在更新的剧集，也有多年前的低成本佳作；科幻片单会标注视效水平与科学设定严谨度；文艺片单则更关注情绪是否自然、镜头是否克制。这样的分类方式让不同观影习惯的人都能找到入口。</p>
+      <div class="pullquote">“电影蜜蜂不是片库，而是选片助手。”这句话基本概括了页面的设计思路：先降低决策成本，再提供有温度的短评和讨论。</div>
+      <h3>内容消费体验与节奏</h3>
+      <p>从页面结构上，电影蜜蜂把“最新更新”“热门推荐”“分类入口”放在靠前位置，适合已经明确想找新片的人；把“深度解析”“FAQ”“影迷评论”放在中后段，适合愿意慢慢浏览、了解背景信息的观众。移动端阅读时，卡片和列表会依次收窄，避免横向挤压。对于追更用户，最新更新列表提供了时间标记，可以快速判断今天是否有值得关注的上线内容。</p>
+      <h3>适合哪些人收藏</h3>
+      <ul>
+        <li>每周想看电影但不想花太多时间选片的人；</li>
+        <li>喜欢按类型补片、做个人观影清单的影迷；</li>
+        <li>需要片单灵感的内容创作者和社群组织者；</li>
+        <li>对修复重映、纪录片、冷门佳片感兴趣的深度观众。</li>
+      </ul>
+      <p>如果你搜索“电影蜜蜂”是为了找一部能立刻看的电影，建议先看热门推荐和最新更新；如果你更想系统了解某一类型，可以从分类入口进入对应片单，再结合深度解析里的推荐逻辑做选择。页面后续还会继续补充导演专题、年度片单和影迷投票内容，方便长期收藏。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="section" id="faq" style="background: var(--surface-soft);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>常见问题 <span class="dot">·</span> 影迷常问</h2>
+      <p class="sub">关于选片、片单和更新节奏，这里集中回答。</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item"><h4><span class="qmark">Q</span> 电影蜜蜂主要推荐哪类电影？</h4><p>以高清电影推荐为主，覆盖悬疑、科幻、剧情、文艺、青春、纪录片和经典修复等方向。推荐标准偏向“完成度高、有讨论价值”，不局限于院线热门，也会收录冷门但口碑稳定的作品。</p></div>
+      <div class="faq-item"><h4><span class="qmark">Q</span> 第一次来应该从哪里开始看？</h4><p>建议先看“热门推荐”了解本周讨论度较高的片子，再根据兴趣进入“分类片单”。如果你不赶时间，可以读一读深度解析，里面解释了不同片单的筛选逻辑，能帮你更快判断哪类电影适合自己。</p></div>
+      <div class="faq-item"><h4><span class="qmark">Q</span> 页面上的评分和热度是真实数据吗？</h4><p>评分和热度是编辑结合影迷讨论、短评反馈和站内浏览趋势整理的模拟参考值，用于帮助排序和比较，不代表官方票房或评分平台数据。建议把它当作选片辅助，而不是唯一标准。</p></div>
+      <div class="faq-item"><h4><span class="qmark">Q</span> 电影蜜蜂会更新流媒体上线信息吗？</h4><p>会。最新更新模块会标注院线热映、流媒体上线、经典重映和原声带上架等动态，时间以页面展示为准。追更用户可以重点关注带“今天”“昨天”标记的条目。</p></div>
+      <div class="faq-item"><h4><span class="qmark">Q</span> 为什么有些热门电影没有出现在推荐里？</h4><p>推荐位有限，编辑会优先选择类型代表性强、短评反馈具体的作品。部分热门片可能出现在资讯或分类索引中，但没有进入首页卡片。后续会根据影迷投票和讨论热度调整。</p></div>
+      <div class="faq-item"><h4><span class="qmark">Q</span> 可以在电影蜜蜂找到同类电影推荐吗？</h4><p>可以。每张推荐卡片都带有类型标签和关键词，搭配分类入口使用效果更好。比如喜欢《暗夜迷踪》的观众，可以在悬疑分类里继续找双线叙事或都市犯罪题材的作品。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 用户评论 ========== -->
+<section class="section" id="comments">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>影迷评论 <span class="dot">·</span> 近 30 天短评</h2>
+      <p class="sub">来自不同观影口味的声音，有安利也有吐槽。</p>
+    </div>
+    <div class="comment-list">
+      <div class="comment-item"><div class="avatar" style="background:#f5b82e;">林</div><div class="comment-body"><div class="comment-head"><span class="name">林间放映员</span><span class="date">2026-11-06</span></div><p>电影蜜蜂的悬疑片单挺对我胃口，不是那种只堆热门的列表。昨晚顺着推荐看了《暗夜迷踪》，前四集节奏确实稳。</p><div class="comment-actions"><span>👍 24</span><span>💬 3</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#2e6b5e;">阿</div><div class="comment-body"><div class="comment-head"><span class="name">阿九不熬夜</span><span class="date">2026-11-06</span></div><p>分类入口做得不错，找文艺片比在别的站翻半天方便。就是希望以后能加上“时长筛选”，有时候只想看 90 分钟以内的。</p><div class="comment-actions"><span>👍 18</span><span>💬 5</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#7a4a2e;">电</div><div class="comment-body"><div class="comment-head"><span class="name">电影票根收藏家</span><span class="date">2026-11-05</span></div><p>《旧城故事》修复版重映信息就是在这里看到的，马上去订了票。希望多更新一些经典重映，这个板块很有价值。</p><div class="comment-actions"><span>👍 31</span><span>💬 2</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#5c3a4e;">小</div><div class="comment-body"><div class="comment-head"><span class="name">小满看片日记</span><span class="date">2026-11-05</span></div><p>《山中来信》属于那种看完不会立刻哭，但会安静很久的电影。电影蜜蜂的短评写得比较克制，没有过度煽情，加分。</p><div class="comment-actions"><span>👍 15</span><span>💬 1</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#1f3d4a;">深</div><div class="comment-body"><div class="comment-head"><span class="name">深海蓝调</span><span class="date">2026-11-04</span></div><p>纪录片推荐能不能再多一点？《深海来信》拍得很好，但自然类看完了，想找一些人文历史方向的。</p><div class="comment-actions"><span>👍 9</span><span>💬 4</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#d99a0b;">星</div><div class="comment-body"><div class="comment-head"><span class="name">星尘旅人_027</span><span class="date">2026-11-04</span></div><p>科幻片单里标注视效水平这点很实用。有些片子剧情一般但大屏效果确实好，按这个分类选不会踩雷。</p><div class="comment-actions"><span>👍 12</span><span>💬 0</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#4a3b2a;">慢</div><div class="comment-body"><div class="comment-head"><span class="name">慢速快门</span><span class="date">2026-11-03</span></div><p>整体页面挺顺的，手机上也不乱。提个小意见：最新更新列表如果能按日期分组就更好了，现在翻起来稍微有点长。</p><div class="comment-actions"><span>👍 7</span><span>💬 2</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#3d5a4c;">木</div><div class="comment-body"><div class="comment-head"><span class="name">木鱼观影</span><span class="date">2026-11-03</span></div><p>《逆光少女》音乐段落确实好听，原声带上架之后循环了几遍。青春片拍得不尬，新人演员表现自然。</p><div class="comment-actions"><span>👍 11</span><span>💬 1</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#2f4858;">北</div><div class="comment-body"><div class="comment-head"><span class="name">北纬三十度</span><span class="date">2026-11-02</span></div><p>想吐槽一下热门推荐里悬疑占比有点高，最近想换换口味看喜剧，分类里暂时没找到合适的。希望补一些轻喜剧。</p><div class="comment-actions"><span>👍 6</span><span>💬 3</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#f5b82e;">罐</div><div class="comment-body"><div class="comment-head"><span class="name">罐头笑声</span><span class="date">2026-11-02</span></div><p>评论区的氛围还可以，能看到不同的声音。电影蜜蜂的深度解析写得比一般推荐页扎实，适合我这种喜欢先看分析再决定的人。</p><div class="comment-actions"><span>👍 14</span><span>💬 0</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#7a4a2e;">夜</div><div class="comment-body"><div class="comment-head"><span class="name">夜航船客</span><span class="date">2026-11-01</span></div><p>《暗夜迷踪》第 10 集有点拖，不过整体还是想看下去。希望剧集页面能加上“是否完结”的标记，追更党比较在意这个。</p><div class="comment-actions"><span>👍 8</span><span>💬 2</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#5c3a4e;">拾</div><div class="comment-body"><div class="comment-head"><span class="name">拾光者</span><span class="date">2026-10-31</span></div><p>冷门佳片这个分类名字起得好。很多站只会推热门，电影蜜蜂还愿意给低讨论度的片子留位置，对深度影迷友好。</p><div class="comment-actions"><span>👍 19</span><span>💬 1</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#1f3d4a;">海</div><div class="comment-body"><div class="comment-head"><span class="name">海盐汽水</span><span class="date">2026-10-30</span></div><p>页面打开速度不错，没有乱七八糟的弹窗，这点就很加分。希望保持住，别以后加太多广告。</p><div class="comment-actions"><span>👍 22</span><span>💬 0</span></div></div></div>
+      <div class="comment-item"><div class="avatar" style="background:#d99a0b;">灯</div><div class="comment-body"><div class="comment-head"><span class="name">灯塔与胶片</span><span class="date">2026-10-29</span></div><p>FAQ 里关于评分的解释挺坦诚的，模拟参考值就直说，比假装官方评分好。选片的时候我会结合豆瓣一起看。</p><div class="comment-actions"><span>👍 10</span><span>💬 1</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 相关资讯 ========== -->
+<section class="section" id="news" style="background: var(--surface-soft);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>电影资讯 <span class="dot">·</span> 近期动态</h2>
+      <p class="sub">围绕新片、重映和片单更新的短资讯。</p>
+    </div>
+    <div class="news-grid">
+      <article class="card news-card">
+        <span class="date">2026-11-07</span>
+        <h4>《暗夜迷踪》进入收官阶段，讨论区热度走高</h4>
+        <p>本季第 12 集上线后，关于最终反转的讨论明显增多。电影蜜蜂悬疑片单同步更新了相关推荐。</p>
+        <span class="read">阅读全文 →</span>
+      </article>
+      <article class="card news-card">
+        <span class="date">2026-11-06</span>
+        <h4>经典修复《旧城故事》加映一周，胶片质感获好评</h4>
+        <p>修复版保留颗粒感，没有过度磨皮，被不少影迷认为是今年重映里比较用心的一部。</p>
+        <span class="read">阅读全文 →</span>
+      </article>
+      <article class="card news-card">
+        <span class="date">2026-11-05</span>
+        <h4>《星尘旅人》视效幕后特辑发布</h4>
+        <p>制作团队分享了太空场景的光影设计，对科幻迷来说信息量很足。电影蜜蜂已加入科幻片单推荐。</p>
+        <span class="read">阅读全文 →</span>
+      </article>
+      <article class="card news-card">
+        <span class="date">2026-11-04</span>
+        <h4>电影蜜蜂新增“冷门高口碑”专题入口</h4>
+        <p>专题整理了讨论度不高但完成度较好的作品，后续会按季度更新，适合喜欢淘片的观众。</p>
+        <span class="read">阅读全文 →</span>
+      </article>
+      <article class="card news-card">
+        <span class="date">2026-11-03</span>
+        <h4>《逆光少女》原声带上架，三首插曲完整收录</h4>
+        <p>音乐制作人提到创作时参考了独立乐队现场感，片中乐队段落基本采用同期录音。</p>
+        <span class="read">阅读全文 →</span>
+      </article>
+      <article class="card news-card">
+        <span class="date">2026-11-01</span>
+        <h4>纪录片《深海来信》上线，海洋题材关注度上升</h4>
+        <p>影片跟拍科考队下潜过程，画面以实拍为主。电影蜜蜂纪录片分类已同步收录。</p>
+        <span class="read">阅读全文 →</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 页脚 ========== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="logo-mark">🐝</span> 电影蜜蜂</div>
+        <p>专注高清电影推荐与观影指南的内容专题。用片单、短评和深度解析，帮你更快找到下一部想看的电影。</p>
+      </div>
+      <div class="foot-col">
+        <h5>浏览板块</h5>
+        <a href="/#hot-picks">热门推荐</a>
+        <a href="/#latest-update">最新更新</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#categories">分类片单</a>
+      </div>
+      <div class="foot-col">
+        <h5>影迷入口</h5>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">影迷评论</a>
+        <a href="/#news">电影资讯</a>
+        <a href="/#intro">关于电影蜜蜂</a>
+      </div>
+      <div class="foot-col">
+        <h5>友情链接</h5>
+        <a href="/#top">观影指南</a>
+        <a href="/#top">片单整理</a>
+        <a href="/#top">电影资料</a>
+        <a href="/#top">合作联系</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 电影蜜蜂 · 内容仅供观影参考与交流</span>
+      <span>页面内容为模拟展示，评分与热度不代表官方数据。友情链接为占位展示。</span>
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                                                                                                                   </html>
