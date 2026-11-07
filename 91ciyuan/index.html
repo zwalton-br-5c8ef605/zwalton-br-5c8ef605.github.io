@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>91次元官网入口-二次元社区导航与内容推荐_动漫资源_同好交流</title>
+  <meta name="description" content="91次元官网入口是二次元爱好者的一站式导航与内容推荐专题页。这里汇总了动漫、漫画、游戏、轻小说等热门分类，提供最新更新追踪、社区讨论与实用FAQ，帮助你快速找到感兴趣的二次元内容并参与同好交流。">
+  <meta name="keywords" content="91次元官网入口,二次元社区,动漫资源导航,同好交流,ACG内容推荐">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-page: #f8f6fc;
+      --bg-card: #ffffff;
+      --bg-soft: #f0ebf9;
+      --text-main: #1e1a2b;
+      --text-sub: #4f4a5e;
+      --text-muted: #7b748b;
+      --accent: #7c5ce0;
+      --accent-light: #b8a6f0;
+      --accent-soft: #ede7ff;
+      --border: #e2dbf0;
+      --shadow-sm: 0 2px 10px rgba(124, 92, 224, 0.06);
+      --shadow-hover: 0 8px 24px rgba(124, 92, 224, 0.12);
+      --radius-card: 18px;
+      --radius-sm: 12px;
+      --max-width: 1200px;
+      --font: 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 顶部导航 */
+    .nav-header {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 1.35rem;
+    }
+
+    .logo-icon {
+      background: var(--accent);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 4px 10px rgba(124, 92, 224, 0.35);
+    }
+
+    .logo-text {
+      color: var(--text-main);
+    }
+
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--text-sub);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-outline {
+      padding: 8px 18px;
+      border-radius: 30px;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      background: white;
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-soft);
+    }
+
+    .btn-solid {
+      padding: 8px 18px;
+      border-radius: 30px;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-solid:hover {
+      background: #6a4ad0;
+      box-shadow: 0 6px 14px rgba(124, 92, 224, 0.3);
+    }
+
+    /* 首屏 Banner */
+    .hero-section {
+      padding: 40px 0 32px;
+      background: linear-gradient(145deg, #f3eeff 0%, #f8f6fc 80%);
+      border-radius: 0 0 40px 40px;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-badge {
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      display: inline-block;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    .hero-content h1 mark {
+      background: linear-gradient(120deg, var(--accent-light) 0%, var(--accent-light) 40%, transparent 80%);
+      color: var(--accent);
+      padding: 0 4px;
+      border-radius: 6px;
+    }
+
+    .hero-desc {
+      max-width: 720px;
+      font-size: 1.1rem;
+      color: var(--text-sub);
+      margin-bottom: 28px;
+    }
+
+    .hero-search {
+      display: flex;
+      width: 100%;
+      max-width: 620px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-sm);
+      border-radius: 60px;
+      background: white;
+      padding: 4px 4px 4px 24px;
+      align-items: center;
+      border: 1px solid var(--border);
+    }
+
+    .hero-search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      padding: 12px 0;
+      background: transparent;
+      color: var(--text-main);
+    }
+
+    .hero-search input::placeholder {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .hero-search button {
+      background: var(--accent);
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .hero-search button:hover {
+      background: #6a4ad0;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 6px;
+    }
+
+    .hero-tags a {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-sub);
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-tags a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* 通用区块 */
+    .section {
+      padding: 54px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--text-main);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+
+    .section-more {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .content-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 22px 20px 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card-tag {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+      width: fit-content;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 18px;
+      flex: 1;
+      line-height: 1.55;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+
+    .card-meta span:first-child {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 8px 0;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+
+    .update-item {
+      display: flex;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .update-item:last-child {
+      border-bottom: none;
+    }
+
+    .update-item:hover {
+      background: #faf8ff;
+    }
+
+    .update-time {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 3px 12px;
+      border-radius: 30px;
+      white-space: nowrap;
+    }
+
+    .update-name {
+      font-weight: 700;
+      font-size: 1rem;
+      min-width: 160px;
+    }
+
+    .update-desc {
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      flex: 1;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 16px;
+    }
+
+    .category-item {
+      background: var(--bg-card);
+      border-radius: 60px;
+      padding: 16px 12px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .category-item:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: var(--accent-light);
+    }
+
+    /* 深度解析正文 */
+    .article-content {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 40px 44px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+      margin: 28px 0 12px;
+      color: var(--text-main);
+    }
+
+    .article-content h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .article-content p {
+      color: var(--text-sub);
+      margin-bottom: 18px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .article-content strong {
+      color: var(--accent);
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .faq-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      padding: 22px 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+
+    .faq-q {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      color: var(--text-main);
+      display: flex;
+      gap: 8px;
+    }
+
+    .faq-q::before {
+      content: 'Q';
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .faq-a {
+      color: var(--text-sub);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      padding-left: 22px;
+    }
+
+    /* 评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .comment-item {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+    }
+
+    .comment-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .comment-body {
+      flex: 1;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+
+    .comment-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .comment-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .comment-text {
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* 资讯卡片 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .news-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .news-date {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .news-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .news-summary {
+      color: var(--text-sub);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      background: #1e1a2b;
+      color: #b8b1c7;
+      padding: 48px 0 28px;
+      margin-top: 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+
+    .footer-brand {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand span {
+      color: var(--accent-light);
+    }
+
+    .footer-desc {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .footer-col h4 {
+      color: white;
+      font-weight: 600;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.88rem;
+      margin-bottom: 10px;
+      color: #b8b1c7;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #2f2a3f;
+      padding-top: 24px;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: #7b748b;
+    }
+
+    @media (max-width: 800px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .article-content {
+        padding: 24px 20px;
+      }
+      .section {
+        padding: 36px 0;
+      }
+      .update-name {
+        min-width: 100px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-search {
+        flex-direction: column;
+        padding: 8px;
+        border-radius: 24px;
+      }
+      .hero-search input {
+        width: 100%;
+        padding: 12px 16px;
+      }
+      .hero-search button {
+        width: 100%;
+      }
+      .hero-tags a {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航 -->
+  <header class="nav-header">
+    <div class="container nav-inner">
+      <a href="/#hero" class="logo-area">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">91<span>次元</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#hot">热门推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#categories">分类导航</a>
+        <a href="/#analysis">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">社区评论</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="/#hero" class="btn-outline">官网入口</a>
+        <a href="/#hot" class="btn-solid">开始探索</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 首屏 Banner -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-content">
+      <div class="hero-badge">✦ 二次元同好聚集地 · 每日更新</div>
+      <h1>91次元官网入口 <mark>一站式</mark> 二次元内容导航</h1>
+      <p class="hero-desc">聚合动漫、漫画、游戏、轻小说等热门内容，追踪最新更新动态，发现同好讨论热点。无论你是追番党、漫画控还是游戏玩家，这里都能找到属于你的次元入口。</p>
+      <div class="hero-search">
+        <input type="text" placeholder="搜索动漫、漫画、游戏或社区话题…" aria-label="搜索二次元内容">
+        <button>搜索</button>
+      </div>
+      <div class="hero-tags">
+        <a href="/#hot">🔥 热门推荐</a>
+        <a href="/#updates">🆕 最新更新</a>
+        <a href="/#categories">📂 分类导航</a>
+        <a href="/#analysis">📖 深度解析</a>
+        <a href="/#faq">❓ 常见问题</a>
+        <a href="/#comments">💬 社区评论</a>
+        <a href="/#news">📰 相关资讯</a>
+        <a href="/#guide">📱 体验指南</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容简介 / 平台介绍 -->
+  <section class="section" id="intro">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">关于91次元官网入口</h2>
+      </div>
+      <div class="article-content" style="max-width:100%;">
+        <p><strong>91次元官网入口</strong>是为二次元爱好者打造的导航与内容聚合专题页面。它解决了同好们在海量ACG内容中难以快速定位优质资源、追踪更新动态和参与社区讨论的痛点。无论你是刚入坑的新人，还是资深老宅，这个入口都能帮助你高效地发现感兴趣的动漫、漫画、游戏作品，了解近期热点话题，并找到志同道合的同好社群。</p>
+        <p>页面涵盖了热门推荐、最新更新列表、分类索引、深度内容解析、常见问题解答以及真实用户评论等模块，所有信息都围绕二次元内容消费场景展开。你可以在热门推荐中发现近期口碑较好的作品，通过最新更新列表追踪连载动态，利用分类导航快速筛选自己喜欢的类型，或者翻阅深度解析了解作品背后的制作细节与看点。</p>
+        <p>为什么值得收藏？因为这里不仅是入口，更是一个持续更新的内容枢纽。资讯板块会同步报道相关动态，评论区可以与其他爱好者交流追番心得，FAQ模块则集中解答了新人常见的疑惑。无论你是想找一部新番来追，还是想了解某个游戏的最新活动，91次元官网入口都能为你提供有价值的参考。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门内容推荐 -->
+  <section class="section" id="hot" style="background: #f4f0fc; border-radius: 40px 40px 0 0;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">热门内容推荐</h2>
+        <a href="/#hot" class="section-more">查看全部 →</a>
+      </div>
+      <div class="card-grid">
+        <div class="content-card">
+          <span class="card-tag">动画 · 连载中</span>
+          <h3 class="card-title">星轨纪元</h3>
+          <p class="card-desc">科幻机甲题材，第2季制作精良，战斗分镜流畅，主角成长线引发热议。</p>
+          <div class="card-meta"><span>🔥 9.2万热度</span><span>更新至第8集</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">漫画 · 周更</span>
+          <h3 class="card-title">异世界食堂物语</h3>
+          <p class="card-desc">美食与异世界结合的治愈系漫画，每话一道料理，轻松解压首选。</p>
+          <div class="card-meta"><span>🔥 7.8万热度</span><span>更新至第104话</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">游戏 · 热门</span>
+          <h3 class="card-title">幻境回响</h3>
+          <p class="card-desc">二次元开放世界RPG，新版本上线新角色「月影」，玩家讨论度极高。</p>
+          <div class="card-meta"><span>🔥 12.3万热度</span><span>版本2.3</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">轻小说 · 完结</span>
+          <h3 class="card-title">转生成为魔导书</h3>
+          <p class="card-desc">主角转生为魔法书，辅助少女成为最强魔导士，温馨又热血。</p>
+          <div class="card-meta"><span>🔥 6.5万热度</span><span>全12卷</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">动画 · 剧场版</span>
+          <h3 class="card-title">夏日幻影</h3>
+          <p class="card-desc">青春奇幻剧场版动画，画面唯美，配乐由知名作曲家操刀，口碑发酵中。</p>
+          <div class="card-meta"><span>🔥 8.9万热度</span><span>上映中</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">漫画 · 连载中</span>
+          <h3 class="card-title">剑与魔法的日常</h3>
+          <p class="card-desc">反套路冒险漫画，主角只想摸鱼却总被卷入事件，笑点密集。</p>
+          <div class="card-meta"><span>🔥 5.6万热度</span><span>更新至第67话</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新更新 / 热播动态 -->
+  <section class="section" id="updates">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">最新更新 · 热播动态</h2>
+        <a href="/#updates" class="section-more">更多更新 →</a>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="update-time">今天 14:20</span>
+          <span class="update-name">星轨纪元</span>
+          <span class="update-desc">第8集已上线，主角觉醒新能力，评论区讨论热烈</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">今天 11:05</span>
+          <span class="update-name">异世界食堂物语</span>
+          <span class="update-desc">第104话更新，新菜品「龙排」引发读者热议</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">今天 09:30</span>
+          <span class="update-name">幻境回响</span>
+          <span class="update-desc">版本2.3「月影降临」正式上线，新角色卡池开放</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">昨天 21:15</span>
+          <span class="update-name">夏日幻影</span>
+          <span class="update-desc">剧场版票房突破5亿，官方发布感谢PV</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">昨天 18:40</span>
+          <span class="update-name">剑与魔法的日常</span>
+          <span class="update-desc">第67话更新，新篇章「迷宫都市」开启</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">2026-11-06</span>
+          <span class="update-name">转生成为魔导书</span>
+          <span class="update-desc">官方宣布将推出特别篇动画，2027年播出</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">2026-11-05</span>
+          <span class="update-name">暗影编年史</span>
+          <span class="update-desc">漫画单行本第10卷发售，附赠限定广播剧</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">2026-11-04</span>
+          <span class="update-name">星空下的约定</span>
+          <span class="update-desc">全新视觉小说游戏公布，2027年春季发售</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类入口 -->
+  <section class="section" id="categories" style="background: #f4f0fc;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">分类导航</h2>
+      </div>
+      <div class="category-grid">
+        <a href="/#hot" class="category-item">热血冒险</a>
+        <a href="/#hot" class="category-item">恋爱日常</a>
+        <a href="/#hot" class="category-item">科幻机甲</a>
+        <a href="/#hot" class="category-item">奇幻魔法</a>
+        <a href="/#hot" class="category-item">治愈美食</a>
+        <a href="/#hot" class="category-item">悬疑推理</a>
+        <a href="/#hot" class="category-item">运动竞技</a>
+        <a href="/#hot" class="category-item">游戏异界</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解析正文 -->
+  <section class="section" id="analysis">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">深度解析：91次元官网入口的内容价值</h2>
+      </div>
+      <div class="article-content">
+        <h3>为什么二次元爱好者需要专属入口？</h3>
+        <p>二次元文化内容浩如烟海，从每个季度数十部新番到持续连载的漫画、轻小说，再到层出不穷的游戏作品，普通爱好者很难在有限时间内筛选出真正符合自己口味的内容。91次元官网入口正是为了解决这一信息过载问题而设计的。它通过编辑精选与用户热度两种维度，将最具讨论度和口碑的作品推到前台，同时保留完整的分类索引，让不同偏好的用户都能按图索骥。</p>
+        <p><strong>91次元官网入口</strong>的核心价值在于“聚合”与“导航”。聚合意味着你不用在多个平台之间反复跳转，只需浏览本页面即可了解近期热点；导航则体现在清晰的分类结构和标签体系上，你可以快速定位到热血、恋爱、科幻、治愈等不同题材，也可以按更新状态筛选连载中或已完结的作品。</p>
+
+        <h3>近期热门题材趋势观察</h3>
+        <p>从近期更新列表和热门推荐来看，异世界题材依然占据较大比重，但观众口味正在从传统的“龙傲天”模式向更轻松治愈的方向偏移。《异世界食堂物语》这类美食日常作品的长线连载证明了慢节奏内容的生命力。与此同时，原创科幻机甲动画《星轨纪元》凭借出色的战斗分镜和人物塑造，成为本季度讨论度最高的作品之一，其第8集的剧情转折在社区引发了大量二次创作。</p>
+        <p>游戏方面，《幻境回响》新版本上线后热度迅速攀升，新角色「月影」的技能机制和背景故事成为玩家社区的核心话题。轻小说领域则呈现出“完结潮”与“新作井喷”并行的局面，多部经典作品陆续完结，同时也有不少新人赏作品获得动画化机会。</p>
+
+        <h3>如何高效使用91次元官网入口？</h3>
+        <p>建议新访客先浏览热门推荐和最新更新两个板块，快速建立对当前二次元内容生态的认知。然后利用分类导航锁定自己感兴趣的题材，再通过深度解析和用户评论了解作品的具体看点。如果你对某部作品产生了兴趣，可以直接在评论区搜索相关讨论，或者查看资讯板块是否有关联报道。FAQ模块则集中回答了“如何找到适合新人的作品”“更新频率是怎样的”等常见问题，适合刚接触二次元内容的朋友。</p>
+        <p>对于资深爱好者，91次元官网入口同样有用——你可以在评论区与其他老宅交流细节考据，或者通过资讯板块关注制作公司的动态、声优阵容变化等硬核信息。页面的结构化设计让深度用户也能快速提取有效内容。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 体验指南 -->
+  <section class="section" id="guide" style="background: #f4f0fc; border-radius: 40px 40px 0 0;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">体验指南</h2>
+      </div>
+      <div class="article-content" style="max-width:100%;">
+        <p><strong>页面结构清晰</strong>：从首屏搜索框到热门推荐、最新更新、分类导航、深度解析、FAQ和评论，整个页面按照“发现—了解—互动”的浏览逻辑组织，减少信息查找成本。</p>
+        <p><strong>分类筛选方便</strong>：八大分类入口覆盖主流二次元内容类型，配合标签系统可以快速缩小范围，找到符合个人偏好的作品。</p>
+        <p><strong>移动端友好</strong>：页面在手机端自动调整布局，卡片和列表均适配小屏幕阅读，追更或通勤途中浏览都不费力。</p>
+        <p><strong>适合追更与收藏</strong>：最新更新列表按时间倒序排列，并标注具体集数/话数，方便你快速定位上次看到的位置；页面整体可保存为书签，随时回来查看新动态。</p>
+        <p><strong>相关推荐扩展浏览路径</strong>：每个卡片和列表项都关联到对应分类或专题，点击即可探索同类作品，避免浏览中断。资讯板块与评论区也提供了从内容到讨论的延伸路径。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">常见问题</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-card">
+          <div class="faq-q">91次元官网入口主要提供哪些内容？</div>
+          <div class="faq-a">该页面聚合了动漫、漫画、游戏、轻小说等二次元内容的热门推荐与最新更新信息，同时提供分类导航、深度解析和社区评论。你可以把它看作一个二次元内容的导航站，帮助你在海量作品中快速找到感兴趣的方向。</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">如何知道自己适合追哪部新番？</div>
+          <div class="faq-a">建议先浏览热门推荐中的标签和简短看点，结合自己偏好的题材（如热血、恋爱、科幻）进行筛选。也可以参考深度解析中对近期趋势的观察，或者翻看评论区其他观众的真实评价，再决定是否入坑。</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">页面上的更新频率是怎样的？</div>
+          <div class="faq-a">最新更新板块会跟随作品实际进度更新，通常动画和漫画按照官方连载节奏同步，游戏版本更新也会及时反映。由于是静态页面，具体时间以各作品官方发布为准，本页面提供的是信息汇总参考。</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">新手如何快速熟悉二次元内容体系？</div>
+          <div class="faq-a">可以从治愈系或日常系作品入手，比如《异世界食堂物语》这类门槛较低的作品。先通过分类导航了解大致题材分类，再挑选一两部口碑较好的短篇作品观看，逐步建立兴趣方向。FAQ和评论区也是获取入门建议的好地方。</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">可以在页面上找到同类作品的推荐吗？</div>
+          <div class="faq-a">可以。每个热门推荐卡片和分类入口都指向相关类型的内容，深度解析中也提到了多部同类作品的比较。你还可以在评论区询问其他用户，通常会有热心同好给出更具体的推荐清单。</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">91次元官网入口和普通动漫资讯站有什么区别？</div>
+          <div class="faq-a">本页面更侧重于“入口”和“导航”功能，将分散的内容信息结构化呈现，而不是单纯发布新闻。它整合了推荐、更新、分类、解析、FAQ和评论多个维度，方便你一站式完成从发现到了解再到讨论的完整流程。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评论 -->
+  <section class="section" id="comments" style="background: #f4f0fc;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">用户评论</h2>
+      </div>
+      <div class="comment-list">
+        <div class="comment-item">
+          <div class="comment-avatar">追</div>
+          <div class="comment-body">
+            <div class="comment-head"><span class="comment-name">追番小能手</span><span class="comment-date">2026-11-07</span></div>
+            <div class="comment-text">星轨纪元第8集真的炸裂，作画和演出都在线，希望后续别崩。这个入口找新番挺方便的。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">漫</div>
+          <div class="comment-body">
+            <div class="comment-head"><span class="comment-name">漫画收藏家</span><span class="comment-date">2026-11-06</span></div>
+            <div class="comment-text">异世界食堂物语追了快两年了，每次更新都留着吃饭的时候看，治愈效果拉满。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">游</div>
+          <div class="comment-body">
+            <div class="comment-head"><span class="comment-name">游戏宅阿伟</span><span class="comment-date">2026-11-06</span></div>
+            <div class="comment-text">幻境回响新角色强度有点超模，不过立绘确实香。这页面更新消息比官方还快。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">路</div>
+          <div class="comment-body">
+            <div class="comment-head"><span class="comment-name">路人甲</span><span class="comment-date">2026-11-05</span></div>
+            <div class="comment-text">刚入坑二次元，分类导航帮了大忙，按题材找作品比瞎搜高效多了。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">考</div>
+          <div class="comment-body">
+            <div class="comment-head"><span class="comment-name">考据党老张</span><span class="comment-date">2026-11-05</span></div>
+            <div class="comment-text">深度解析里提到的题材趋势分析挺准的，异世界确实开始走治愈路线了。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">吐</div>
+          <div class="comment-body">
+            <div class="comment-head"><span class="comment-name">吐槽星人</span><span class="comment-date">2026-11-04</span></div>
+            <div class="comment-text">热门推荐里有些番热度虚高吧，实际看了两集就弃了。不过页面本身挺好用的。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">声</div>
+          <div class="comment-body">
+            <div class="comment-head"><span class="comment-name">声控一枚</span><span class="comment-date">2026-11-04</span></div>
+            <div class="comment-text">希望资讯板块多来点声优相关的情报，现在还是以作品动态为主。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">轻</div>
+          <div class="comment-body">
+            <div class="comment-head"><span class="comment-name">轻小说读者</span><span class="comment-date">2026-11-03</span></div>
+            <div class="comment-text">转生成为魔导书要出特别篇了！虽然原作完结了但能再看到动画真的开心。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">萌</div>
+          <div class="comment-body">
+            <div class="comment-head"><span class="comment-name">萌新求带</span><span class="comment-date">2026-11-03</span></div>
+            <div class="comment-text">有没有大佬推荐几部适合和女朋友一起看的番？评论区蹲一个。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">老</div>
+          <div class="comment-body">
+            <div class="comment-head"><span class="comment-name">老宅不追番</span><span class="comment-date">2026-11-02</span></div>
+            <div class="comment-text">现在新番名字越来越长了，还是喜欢以前简单直接的标题。不过入口页面整理得不错。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">票</div>
+          <div class="comment-body">
+            <div class="comment-head"><span class="comment-name">投票狂魔</span><span class="comment-date">2026-11-02</span></div>
+            <div class="comment-text">建议加个季度最受欢迎投票功能，这样选番更有参考。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">资</div>
+          <div class="comment-body">
+            <div class="comment-head"><span class="comment-name">资讯控</span><span class="comment-date">2026-11-01</span></div>
+            <div class="comment-text">夏日幻影剧场版还没看，等线上版。资讯更新挺及时的，省得去翻官推。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关资讯 -->
+  <section class="section" id="news">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">相关资讯</h2>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-date">2026-11-07</div>
+          <div class="news-title">星轨纪元第8集播出后登上热搜，制作组访谈透露后续剧情走向</div>
+          <div class="news-summary">本集关键战斗场景由新锐原画师负责，制作组表示后续将深入描绘主角与宿敌的羁绊。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-06</div>
+          <div class="news-title">异世界食堂物语单行本第18卷发售，附赠限定食谱小册子</div>
+          <div class="news-summary">累计销量突破300万册，作者在卷末感言中透露还有未公开的料理企划。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-05</div>
+          <div class="news-title">幻境回响新版本首日流水创纪录，官方追加福利活动</div>
+          <div class="news-summary">新角色「月影」卡池开放后玩家反响热烈，官方宣布延长活动时间并追加十连券。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-04</div>
+          <div class="news-title">转生成为魔导书特别篇动画制作决定，2027年播出</div>
+          <div class="news-summary">原作者担任系列构成，将补充正篇中未详细描写的魔导书起源故事。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-03</div>
+          <div class="news-title">夏日幻影剧场版票房突破5亿，官方发布感谢PV</div>
+          <div class="news-summary">PV中收录了未公开的配乐片段，导演表示续作正在构思中。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-02</div>
+          <div class="news-title">剑与魔法的日常累计发行量突破100万部</div>
+          <div class="news-summary">官方开启纪念抽奖活动，同时宣布将推出主角团角色歌专辑。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">91<span>次元</span></div>
+          <p class="footer-desc">91次元官网入口是二次元爱好者的一站式内容导航专题页，聚合热门推荐、更新追踪、分类索引与社区讨论，帮助同好高效发现优质ACG内容。</p>
+        </div>
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <a href="/#hot">热门推荐</a>
+          <a href="/#updates">最新更新</a>
+          <a href="/#categories">分类导航</a>
+          <a href="/#analysis">深度解析</a>
+        </div>
+        <div class="footer-col">
+          <h4>帮助与互动</h4>
+          <a href="/#faq">常见问题</a>
+          <a href="/#comments">用户评论</a>
+          <a href="/#news">相关资讯</a>
+          <a href="/#guide">体验指南</a>
+        </div>
+        <div class="footer-col">
+          <h4>友情链接</h4>
+          <a href="/#hero">次元导航首页</a>
+          <a href="/#hot">动漫推荐站</a>
+          <a href="/#hot">漫画资讯站</a>
+          <a href="/#hot">游戏专题页</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 91次元官网入口 · 内容导航专题站</span>
+        <span>免责声明：本页面为信息聚合与导航展示，所有作品信息以官方发布为准。</span>
+      </div>
+    </div>
+  </footer>
+</body>
+  </html>
